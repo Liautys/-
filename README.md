@@ -1,87 +1,86 @@
------------------------------------------------------------------------------
--- Author: AndLua+ 陵阳
+------------------------------------------------------------------------------作者：VerdGard
 -----------------------------------------------------------------------------
 
-import "android.graphics.PorterDuffColorFilter"
-import "android.graphics.PorterDuff"
+导入"android.graphics.PorterDuffColorFilter"
+导入"android.图形.波特达夫"
 
-function MD提示(str,color,color2,ele,rad)
-  if time then toasttime=Toast.LENGTH_SHORT else toasttime= Toast.LENGTH_SHORT end
-  toasts={
-    CardView;
-    id="toastb",
-    CardElevation=ele;
-    radius=rad;
-    backgroundColor=color;
+函数MD提示(str，color，color2，ele，rad)
+如果时间，则toasttime=Toast.LENGTH_SHORT否则toasttime=Toast.LENGTH_SHORT结束
+祝酒词={
+cardview；
+ID="toastb"，
+CardElevation=ele；
+半径=弧度；
+backgroundColor=color；
     {
-      TextView;
-      layout_margin="7dp";
-      textSize="13sp";
-      TextColor=color2,
-      text=str;
-      layout_gravity="center";
-      id="mess",
+TextView；
+layout_margin="7dp"；
+textSize="13sp"；
+TextColor=color2，
+text=str；
+layout_gravity=“中心”；
+ID="mess"，
     };
   };
-  local toast=Toast.makeText(activity,nil,toasttime);
-  toast.setView(loadlayout(toasts))
-  toast.show()
+local toast=Toast.makeText(活动，无，toasttime)；
+toast.setView(loadlayout(toasts))
+toast.show()
 end
 
-function 窗口标题(text)
-  activity.setTitle(text)
+功能窗口标题(文本)
+activity.setTitle(文本)
 end
 
-function 载入界面(id)
-  activity.setContentView(loadlayout(id))
+功能载入界面(id)
+activity.setContentView(loadlayout(id))
 end
 
-function 隐藏标题栏()
-  activity.ActionBar.hide()
+功能隐藏标题栏()
+activity.ActionBar.hide()
 end
 
-function 设置主题(id)
-  activity.setTheme(id)
+功能设置主题(id)
+activity.setTheme(id)
 end
 
-function 打印(text)
-  print(text)
+功能打印(文本)
+打印(文本)
 end
 
-function 窗口全屏()
-  activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+功能窗口全屏()
+活动。GetWindow().setflags(WindowManager.LayoutParams.Flag_FULLSCREEN，WindowManager.LayoutParams.Flag_FULLSCREEN)
 end
 
-function 取消全屏()
-  activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+功能取消全屏()
+活动。GetWindow()。clearFlags(WindowManager.LayoutParams.Flag_FULLSCREEN)
 end
 
-function 返回桌面()
-  activity.moveTaskToBack(true)
+功能返回桌面()
+activity.moveTaskToBack(true)
 end
 
-function 提示(text)
-  Toast.makeText(activity,text,Toast.LENGTH_SHORT).show()
+函数提示(文本)
+吐司面包。makeText(活动，文本，Toast.Length_SHORT)。显示()
 end
 
-function 截取文本(str,str1,str2)
-  str1=str1:gsub("%p",function(s) return("%"..s) end)
-  return str:match(str1 .. "(.-)"..str2)
+功能截取文本(str，str1，str2)
+str1=str1:gsub("%p"，函数返回("%"..s)结束)
+return str:match(str1.."(. -)"..str2)
 end
 
-function 替换文本(str,str1,str2)
-  str1=str1:gsub("%p",function(s) return("%"..s) end)
-  str2=str2:gsub("%%","%%%%")
-  return str:gsub(str1,str2)
+功能替换文本(str，str1，str2)
+str1=str1:gsub("%p"，函数返回("%"..s)结束)
+str2=str2:gsub(%%"，%%%")
+return str:gsub(str1，str2)
 end
 
-function 字符串长度(str)
-  return utf8.len(str)
+功能字符串长度(str)
+return utf8.len(str)
 end
 
-function 状态栏颜色(color)
-  if Build.VERSION.SDK_INT >= 21 then
-    activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS).setStatusBarColor(color);
+功能状态栏颜色(颜色)
+如果Build.VERSION.SDK_INT>=21，则
+活动。GetWindow().AddFlags(WindowManager.LayoutParams.Flag_DRAWS_SYSTEM_BAR_BACKGROUNDS)。setStatusBarColor(颜色)；
   end
 end
 
